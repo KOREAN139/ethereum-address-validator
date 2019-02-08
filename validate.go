@@ -1,4 +1,4 @@
-package validate
+package ethav
 
 // Validate validates given address
 func Validate(addr string) error {
