@@ -17,8 +17,7 @@ func validChecksum(addr string) bool {
 	for i, b := range hex {
 		c := string(b)
 		if b < '0' || b > '9' {
-			curr := hash[i/2] >> uint(4-i%2*4)
-			if curr&8 != 0 {
+			if hash[i/2]&byte(128-i%2*120) != 0 {
 				c = string(b - 32)
 			}
 		}
